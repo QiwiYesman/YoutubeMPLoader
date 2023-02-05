@@ -12,6 +12,6 @@ There are files to restore build. To do this, you need to:
 <li>Change in .cs files namespaces on your created project's namespace</li>
 <li>Change in xaml namespaces (here was App8 namespace) on your created project's namespace</li>
 <li>Add YoutubeExplodePackage if needed</li>
-<li>Add dependence to created dll in step 4 for 'your-project-name'.Android project </li>
+<li>Add dependence to created dll in step 5 for 'your-project-name'.Android project </li>
 <li>Enjoy</li>
 </ol>
