@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MauiApp1"
+             x:Class="MauiApp1.MainPage"
+             BackgroundColor="Black"
+             >
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                x:Name="label"
+                Text="Input youtube link below"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="24"
+                HorizontalOptions="Center"
+                TextColor="LightCyan"
+                />
+
+            <Entry
+                x:Name="link_input"
+                BackgroundColor="LightCyan"
+                TextColor="DarkBlue"
+                FontSize="18"
+                />
+            <Grid ColumnDefinitions="*,*"
+                  ColumnSpacing="20"
+                  RowDefinitions="Auto">
+                <Button Grid.Column="0"
+                    x:Name="paste_button"
+                    Text="Paste"
+                    Clicked="OnPaste"
+                    BackgroundColor="LightCyan"
+                    
+                    />
+                <Button Grid.Column="1"
+                    x:Name="download_button"
+                    Clicked="OnDownload"
+                    Text="Download"
+                        BackgroundColor="LightCyan"
+                    />
+            </Grid>
+
+            <Grid ColumnDefinitions="*,*"
+                  ColumnSpacing="20"
+                  RowDefinitions="Auto"
+                  >
+                <controls:RadioCheckedButton
+                    GroupName="ExtensionGroup"
+                    Grid.Column="0"
+                    x:Name="mp3_radio"
+                    IsChecked="True"
+                    Text="mp3">
+
+                </controls:RadioCheckedButton>
+                <controls:RadioCheckedButton
+                    Grid.Column="1"
+                    x:Name="mp4_radio"
+                    GroupName="ExtensionGroup"
+                    Text="mp4"
+                    OnChecked="SwitchVisibleResolutionGroup"
+                    >
+               
+                    
+                </controls:RadioCheckedButton>
+            </Grid>
+            <Grid ColumnDefinitions="*,*,*"
+                  ColumnSpacing="20"
+                  RowDefinitions="Auto"
+                  x:Name="ResolutionGroup"
+                  IsVisible="false"
+                  >
+                <controls:RadioCheckedButton
+                    GroupName="Resolution"
+                    IsChecked="True"                         
+                    Grid.Column="0"
+                    x:Name="radio_720"
+                    Text="720p">
+
+                </controls:RadioCheckedButton>
+                <controls:RadioCheckedButton GroupName="Resolution"
+                    Grid.Column="1"
+                    x:Name="radio_480"
+                    Text="480p">
+                </controls:RadioCheckedButton>
+                <controls:RadioCheckedButton GroupName="Resolution"
+                    Grid.Column="2"
+                    x:Name="radio_360"
+                    Text="360p">
+                </controls:RadioCheckedButton>
+            </Grid>
+            <ProgressBar
+                x:Name="progressBar"
+                ScaleY="6"
+                Margin="0, 20, 0, 20"
+                Progress="0.5"
+                BackgroundColor="LightCyan"
+                HeightRequest="4"
+                ProgressColor="Blue"
+                ></ProgressBar>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
